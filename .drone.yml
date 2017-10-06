@@ -3,12 +3,8 @@ pipeline:
     image: docker
     privileged: true
     commands:
-      - docker build -t tmp .
+      - docker login -u krotkiewicz -p ${DOCKER_PASSWORD}
+      - docker build -t ulamlabs/drone-test .
+      - docker push ulamlabs/drone-test
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  docker:
-    image: plugins/docker
-    repo: ulamlabs/drone-test
-    tags: latest
-    username: krotkiewicz
-    password: ${DOCKER_PASSWORD}
