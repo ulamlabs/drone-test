@@ -2,4 +2,4 @@ pipeline:
   backend:
     image: ubuntu
     commands:
-      - echo 'a'
+      - docker build -t tmp .
