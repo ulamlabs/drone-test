@@ -4,6 +4,8 @@ pipeline:
     privileged: true
     commands:
       - echo $DOCKER_PASSWORD
+      - echo ${DOCKER_PASSWORD}
+      - echo $${DOCKER_PASSWORD}
       - docker login -u krotkiewicz -p ${DOCKER_PASSWORD}
       - docker build -t ulamlabs/drone-test .
       - docker push ulamlabs/drone-test
