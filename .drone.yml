@@ -1,0 +1,5 @@
+pipeline:
+  backend:
+    image: ubuntu
+    commands:
+      - echo 'a'
