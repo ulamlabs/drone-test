@@ -8,3 +8,7 @@ pipeline:
       - /var/run/docker.sock:/var/run/docker.sock
   docker:
     image: plugins/docker
+    repo: ulamlabs/drone-test
+    tags: latest
+    username: krotkiewicz
+    password: ${DOCKER_PASSWORD}
