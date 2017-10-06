@@ -1,6 +1,7 @@
 pipeline:
   backend:
     image: docker
+    privileged: true
     commands:
       - docker ps
     volumes:
