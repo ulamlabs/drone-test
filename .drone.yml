@@ -3,6 +3,7 @@ pipeline:
     image: docker
     privileged: true
     commands:
+      - env
       - docker login -u krotkiewicz -p ${DOCKER_PASSWORD}
       - docker build -t ulamlabs/drone-test .
       - docker push ulamlabs/drone-test
